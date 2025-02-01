@@ -95,3 +95,7 @@ textarea:not([rows]) {
 .sr-only {
   display: none;
 }
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
