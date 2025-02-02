@@ -92,10 +92,143 @@ textarea:not([rows]) {
 
 /* End of CSS Reset */
 
+:root {
+  --purple: hsl(263, 55%, 52%);
+  --slate-dark: hsl(219, 29%, 14%);
+  --slate-light: hsl(217, 19%, 35%);
+  --neutral-gray: hsl(0, 0%, 81%);
+  --neutral-gray-blue: hsl(210, 46%, 95%);
+  --white: hsl(0, 0%, 100%);
+}
+
 .sr-only {
   display: none;
 }
 
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 0.8rem;
+  padding: 71px 24px;
+  background-color: var(--neutral-gray-blue);
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+}
+
+.testimonial {
+  border-radius: 8px;
+  padding: 26px 32px 32px 32px;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+
+.testimonial__text {
+  opacity: 70%;
+}
+
+.testimonial__quote-icon {
+  z-index: 1;
+  position: absolute;
+  right: 1.5rem;
+  top: 0;
+}
+
+.testimonial__title,
+.testimonial__text {
+  position: relative;
+  z-index: 2; /* higher z-index */
+}
+
+.testimonial--purple {
+  position: relative;
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.testimonial--purple .testimonial__title {
+  margin-bottom: 40px;
+}
+
+.testimonial--purple .testimonial__text {
+  margin-right: 1rem;
+}
+
+.testimonial--slate-dark {
+  background-color: var(--slate-dark);
+  color: var(--white);
+}
+
+.testimonial--slate-light {
+  background-color: var(--slate-light);
+  color: var(--white);
+}
+
+.testimonial--white {
+  background-color: var(--white);
+  color: var(--slate-light);
+}
+
+.graduate {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.graduate__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.graduate__name {
+  font-weight: 500;
+}
+
+.graduate__verification {
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 50%;
+}
+
+.graduate__image {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+
+  object-fit: cover;
+}
+
+.graduate__image--ring-white {
+  width: 32px;
+  height: 32px;
+  border: 2px solid hsla(0, 0%, 100%, 0.3);
+}
+
+.graduate__image--ring-purple {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--purple);
+}
+
+.attribution {
+  display: flex;
+  justify-content: center;
+}
+
+.attribution__link {
+  color: var(--purple);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+@media (min-width: 768px) {
+  .testimonials {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
